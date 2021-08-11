@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage ('Directory Stage') {
-
-                steps {
-                        sh 'cd manager'
-                }
-            }
         stage ('Compile Stage') {
 
             steps {
