@@ -4,14 +4,13 @@ pipeline {
     stages {
         stage ('Compile Stage') {
             steps {
-                    bat 'cd manager'
-                    bat 'mvn clean compile'
+                    bat 'mvn -f manager/pom.xml clean compile'
             }
         }
         stage ('Deployment Stage') {
             steps {
                     bat 'cd manager'
-                    bat 'mvn install'
+                    bat 'mvn -f manager/pom.xml install'
 
             }
         }
