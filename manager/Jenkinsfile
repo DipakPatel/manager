@@ -2,18 +2,20 @@ pipeline {
     agent any
 
     stages {
+        stage ('Directory Stage') {
+                steps {
+                        bat 'cd manager'
+                }
+            }
         stage ('Compile Stage') {
-
             steps {
-
-                    sh 'mvn clean compile'
-
+                    bat 'mvn clean compile'
             }
         }
         stage ('Deployment Stage') {
             steps {
 
-                    sh 'mvn deploy'
+                    bat 'mvn deploy'
 
             }
         }
